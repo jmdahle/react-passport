@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class SignupForm extends React.Component {
 
@@ -24,6 +25,25 @@ class SignupForm extends React.Component {
         console.log('sign-up-form, username: ');
         console.log(this.state.username);
 		//request to server here
+		axios.post('/', {
+			username: this.state.username,
+			password: this.state.password
+		})
+			.then( response => {
+				console.log(response);
+				if (response.data) {
+					console.log('successful signup');
+					this.setState({
+						redirectTo: '/login'
+					})
+				} else {
+					console.log('error in signup data');
+				}
+			})
+			.catch( error => {
+				console.log('error in signup process');
+				console.log(error);
+			});
 	}
 
     render() {
