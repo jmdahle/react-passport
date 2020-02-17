@@ -1,3 +1,25 @@
+## react-passport-test
+
+### About
+This project is basic scaffolding to test passport user authentication through a react front end.
+Setup here uses the MERN stack:
+* MongoDB
+* Express
+* React
+* Node.js
+
+The code closely follows the example from this [article](https://medium.com/@brendt_bly/simple-mern-passport-app-tutorial-4aec2105e367).
+
+### Custom Scripts
+```npm run dev```
+Starts the react development server (```npm start```) and express webserver (```node ./server/server.js```) concurrently.
+
+### dev environment notes
+* Uses [nodemon](https://www.npmjs.com/package/nodemon) to automatically restart node application when files change
+* Users [concurrently](https://www.npmjs.com/package/concurrently) to run multiple commands concurrently (react development server and express server)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +88,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# react-passport

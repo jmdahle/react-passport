@@ -1,21 +1,19 @@
 const express = require('express');
 const svr = express();
-const PORT = process.env.PORT || 3001;
+const dbConnection = require('./database');
+const user = require('./routes/user');
 
-// Define middleware here
+
+//  middleware
+// body parsers:
 svr.use(express.urlencoded({ extended: true }));  // allows request parsing (e.g., request.body._ )
 svr.use(express.json());  // allows parsing of JSON requests
 
-
 // routing
-svr.post('/', (request, response, next) => {
-    console.log('server post username: ');
-    console.log(request.body.username);
-    response.end;
-});
-
+svr.use('/user', user)
 
 // start server
+const PORT = process.env.PORT || 3001;
 svr.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`)
 })
